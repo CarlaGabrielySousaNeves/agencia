@@ -3,7 +3,7 @@
 ## Criar um projeto no Maven
 mvn archetype:generate -DgroupId=br.com.senai -DartifactId=nome_do_projeto -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-## Acessar o projeto do GIT
+3-
 cd nome_do_projeto
 
 ## Inicializar o versionamento
