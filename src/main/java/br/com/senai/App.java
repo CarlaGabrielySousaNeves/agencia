@@ -1,9 +1,7 @@
 package br.com.senai;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import br.com.senai.enuns.Estado;
 import br.com.senai.enuns.Genero;
@@ -41,16 +39,19 @@ public class App
         e2.dataInicio = LocalDate.of(2020, 02, 01);
         e2.dataFim = LocalDate.of(2023, 06, 10);
 
-        List<Escolaridade> list = new ArrayList<>();
-        list.add(e1);
-        list.add(e2);
+        yasmin.escolaridades = Arrays.asList(e1, e2);
 
-        yasmin.escolaridades = list;
+        Candidato mirelle = new Candidato();
+        mirelle.nomeCompleto = "Mirelle Silva";
+        mirelle.dataNascimento = LocalDate.of(2007, 12, 18);
 
         System.out.println("Nome Completo: " +yasmin.nomeCompleto);
-        System.out.println("Idade: "+Period.between(yasmin.dataNascimento,
-        LocalDate.now()). getYears());
-        System.out.println("Endereço: "+yasmin.endereco.logradouro);
+        System.out.println("Idade: "+yasmin.calcularidade());
+
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+
+        System.out.println("Nome Completo: " +mirelle.nomeCompleto);
+        System.out.println("Idade: "+mirelle.calcularidade());
 
         for (Escolaridade escolaridade : yasmin.escolaridades) {
             System.out.println(escolaridade.nomeCurso+" - "+escolaridade.nomeInstituicao);
